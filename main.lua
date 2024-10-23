@@ -1,18 +1,14 @@
-bf = require("breezefield")
-
 function love.load()
-  love.window.setMode(1000, 800)
 
-  world = bf.newWorld(0, 90.81, true)
-  print(world:getGravity())
-                                          --( x1, y1, x2, y2, x3, y3, ... clockwise a,b,c,d)
-  ground = bf.Collider.new(world, "Polygon", {0, 780, 1000, 780 , 1000, 800, 0, 800})
-  box = bf.Collider.new(world, "Polygon", {100, 200, 300, 200 , 300, 100, 100, 250})
+  HC = require 'lib/HC'
+  mouse = HC.rectangle(300,400,40,40)
+  mouse:moveTo(love.mouse.getPosition())
 end
 
 function love.update(dt)
+  mouse:moveTo(love.mouse.getPosition())
 end
 
 function love.draw()
-  world:draw()
+  mouse:draw()
 end
