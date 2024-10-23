@@ -6,6 +6,7 @@ function love.load()
 end
 
 function love.update(dt)
+  
   mouse:moveTo(love.mouse.getPosition())
 end
 
